@@ -303,6 +303,10 @@ jQuery.each(['get', 'put', 'delete', 'post'], function (i, method) {
             successCallback = data;
             data = undefined;
         }
+
+        //make path relative
+        if (url.charAt(0) == "/") url = url.substr(1);
+
         if (typeof message === 'function') {
             // Shift all the parameters because we aren't calling the service with a status message.
             completeCallback = errorCallback;
