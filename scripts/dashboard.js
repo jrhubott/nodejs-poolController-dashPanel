@@ -133,7 +133,7 @@
             console.log('initializing state');
             $.getLocalService('/config/web.services', null, function (data, status, xhr) {
                 console.log(data);
-                o.apiServiceUrl = "server"
+                o.apiServiceUrl = self.window[0].location.href +  "server";
                 //o.apiServiceUrl = data.protocol + data.ip + (typeof data.port !== 'undefined' && !isNaN(data.port) ? ':' + data.port : '');
                 $('body').attr('data-apiserviceurl', o.apiServiceUrl);
                 $.getApiService('/state/all', null, function (data, status, xhr) {
