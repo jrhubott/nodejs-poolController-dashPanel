@@ -431,7 +431,10 @@ jQuery.each(['get', 'put', 'delete', 'post'], function (i, method) {
             }
         };
         var cbShowSuccess = function (data, status, jqXHR) { };
-        var serviceUrl = $('body').attr('data-apiserviceurl') + (!url.startsWith('/') ? '/' : '') + url;
+        //var serviceUrl = $('body').attr('data-apiserviceurl') + (!url.startsWith('/') ? '/' : '') + url;
+
+        //Redirect to server api for ingress
+        var serviceUrl = "server" + (!url.startsWith('/') ? '/' : '') + url;
 
 
         // Set up the callbacks.
