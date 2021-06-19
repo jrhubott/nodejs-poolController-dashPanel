@@ -133,7 +133,8 @@
             console.log('initializing state');
             $.getLocalService('/config/web.services', null, function (data, status, xhr) {
                 console.log(data);
-                o.apiServiceUrl = data.protocol + data.ip + (typeof data.port !== 'undefined' && !isNaN(data.port) ? ':' + data.port : '');
+                o.apiServiceUrl = "server"
+                //o.apiServiceUrl = data.protocol + data.ip + (typeof data.port !== 'undefined' && !isNaN(data.port) ? ':' + data.port : '');
                 $('body').attr('data-apiserviceurl', o.apiServiceUrl);
                 $.getApiService('/state/all', null, function (data, status, xhr) {
                     if (typeof data.equipment === 'undefined' || typeof data.equipment.model === 'undefined') { self._clearPanels(); return; }
