@@ -223,7 +223,7 @@
         _initSockets: function () {
             var self = this, o = self.options, el = self.element;
             console.log({ msg: 'Checking Url', url: o.apiServiceUrl });
-            var serverPath = self.window[0].location.pathname + "server";
+            var serverPath = self.window[0].location.pathname + "server/socket.io";
             o.socket = io(o.apiServiceUrl, { reconnectionDelay: 2000, reconnection: true, reconnectionDelayMax: 20000, upgrade: true, path: serverPath });
             o.socket.on('circuit', function (data) {
                 console.log({ evt: 'circuit', data: data });
